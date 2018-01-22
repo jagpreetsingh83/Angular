@@ -9,4 +9,10 @@ export class MessagesComponent implements OnInit {
 
   ngOnInit() {}
 
+  closeAlert(message : string) {
+    this
+      .messageService
+      .delete(message);
+  }
+
 }

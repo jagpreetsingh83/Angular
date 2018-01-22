@@ -1,5 +1,10 @@
 # MyApp
 
+## PENDING
+- Search Results not working
+- Clearing the search once an option is clicked
+- styling the alert (excessive padding)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
 
 ## Development server

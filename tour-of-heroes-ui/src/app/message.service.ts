@@ -11,4 +11,9 @@ export class MessageService {
   clear() {
     this.messages = [];
   }
+  delete(message : string) {
+    this.messages = this
+      .messages
+      .filter(m => m !== message);
+  }
 }

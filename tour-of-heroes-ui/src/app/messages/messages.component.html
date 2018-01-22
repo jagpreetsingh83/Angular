@@ -1,5 +1,11 @@
 <div *ngIf="messageService.messages.length">
-  <h2>Messages</h2>
-  <button class="clear" (click)="messageService.clear()">clear</button>
-  <div *ngFor="let message of messageService.messages">{{message}}</div>
+  <div class="card bg-light rounded-0 text-center">
+    <div class="card-body">
+      <h4>Messages</h4>
+    </div>
+  </div>
+  <button class="btn btn-danger btn-block rounded-0" (click)="messageService.clear()">clear</button>
+  <div *ngFor="let message of messageService.messages">
+    <ngb-alert type="danger" (close)="closeAlert(message)">{{ message }}</ngb-alert>
+  </div>
 </div>
