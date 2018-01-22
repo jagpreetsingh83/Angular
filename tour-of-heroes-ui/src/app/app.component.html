@@ -1,7 +1,16 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <a class="navbar-brand" routerLink="/dashboard">{{title}}</a>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard" [ngClass]="{'active': isActive('dashboard')}">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/heroes" [ngClass]="{'active': isActive('heroes')}">Heroes</a>
+    </li>
+  </ul>
+  <div class="ml-auto">
+    <app-hero-search></app-hero-search>
+  </div>
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>

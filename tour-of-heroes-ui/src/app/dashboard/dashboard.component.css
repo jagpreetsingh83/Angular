@@ -1,0 +1,8 @@
+ngb-carousel {
+  height: 100px;
+}
+
+ngb-carousel a {
+  text-decoration: none;
+  color: white;
+}
