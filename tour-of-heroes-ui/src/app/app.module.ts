@@ -16,6 +16,9 @@ import {InMemoryDataService} from './in-memory-data.service';
 import {HeroSearchComponent} from './hero-search/hero-search.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import {CustomRouteReuseStrategy} from './route-reuse.strategy';
+import {RouteReuseStrategy} from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     NgbModule.forRoot()
   ],
   providers: [
-    HeroService, MessageService
+    HeroService,
+    MessageService, {
+      provide: RouteReuseStrategy,
+      useClass: CustomRouteReuseStrategy
+    }
   ],
   bootstrap: [AppComponent]
 })
