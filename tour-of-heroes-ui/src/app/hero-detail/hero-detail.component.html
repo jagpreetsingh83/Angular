@@ -4,14 +4,10 @@
       <h3>{{hero.name | uppercase}} Details</h3>
     </div>
   </div>
-  <div>
-    <span>id: </span>{{hero.id}}
+  <div class="form-inline">
+    <input class="form-control" value="{{hero.id}}" readonly>
+    <input class="form-control" [(ngModel)]="hero.name" placeholder="name">
   </div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="hero.name" placeholder="name">
-    </label>
-  </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <button (click)="goBack()" class="btn btn-danger">go back</button>
+  <button (click)="save()" class="btn btn-success">save</button>
 </div>
