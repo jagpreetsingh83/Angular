@@ -4,7 +4,7 @@
       <h4>Messages</h4>
     </div>
   </div>
-  <button class="btn btn-danger btn-block rounded-0" (click)="messageService.clear()">clear</button>
+  <button class="btn btn-danger btn-block rounded-0" (click)="messageService.clear()">Clear</button>
   <div *ngFor="let message of messageService.messages">
     <ngb-alert type="danger" (close)="closeAlert(message)">{{ message }}</ngb-alert>
   </div>
