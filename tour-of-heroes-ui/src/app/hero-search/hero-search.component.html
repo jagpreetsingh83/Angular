@@ -4,5 +4,5 @@
   </div>
 </form>
 <div class="list-group" id="search-result">
-  <a *ngFor="let hero of heroes$ | async" routerLink="/detail/{{hero.id}}" class="list-group-item list-group-item-action">{{hero.name}}</a>
+  <a *ngFor="let hero of heroes$ | async" (click)="editHero(hero.id)" class="list-group-item list-group-item-action">{{hero.name}}</a>
 </div>

@@ -26,7 +26,7 @@ export class CustomRouteReuseStrategy extends RouteReuseStrategy {
       }
       next = next.firstChild;
     }
-    console.debug('url', url);
+    //console.debug('url', url);
     return url;
   }
 
@@ -54,8 +54,8 @@ export class CustomRouteReuseStrategy extends RouteReuseStrategy {
   }
 
   shouldReuseRoute(future : ActivatedRouteSnapshot, curr : ActivatedRouteSnapshot) : boolean {
-    //console.debug('CustomReuseStrategy:shouldReuseRoute', future, curr);
-    console.log(this.calcKey(curr), this.calcKey(future));
+    // console.debug('CustomReuseStrategy:shouldReuseRoute', future, curr);
+    // console.log(this.calcKey(curr), this.calcKey(future));
     return this.calcKey(curr) === this.calcKey(future);
   }
 }
