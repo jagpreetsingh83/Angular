@@ -8,7 +8,7 @@
     <form class="form-inline">
       <label for="heroName">Hero name:</label>
       <input class="form-control" id="heroName" #heroName>
-      <button class="btn btn-success" (click)="add(heroName.value); heroName.value=''">Add</button>
+      <button class="btn btn-sm btn-success" (click)="add(heroName.value); heroName.value=''">Add</button>
     </form>
   </div>
 </div>
@@ -16,6 +16,6 @@
   <a *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}" class="list-group-item list-group-item-action">
     <span class="badge badge-secondary">{{hero.id}}</span>
     <span>{{hero.name}}</span>
-    <button class="float-right btn btn-danger" title="delete hero" (click)="delete(hero)">&times;</button>
+    <button class="float-right btn btn-sm btn-danger" title="delete hero" (click)="delete(hero)">&times;</button>
   </a>
 </div>

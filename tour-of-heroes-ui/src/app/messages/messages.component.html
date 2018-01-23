@@ -1,14 +1,12 @@
 <div *ngIf="messageService.messages.length">
-  <div class="card">
-    <div class="card-body">
-      <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
-        aria-controls="collapseExample">
-        Messages
-      </button>
-    </div>
+  <div class="content-div">
+    <button type="button" class="btn btn-sm btn-outline-primary" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseExample">
+      Messages
+    </button>
   </div>
   <div id="collapseExample" [ngbCollapse]="isCollapsed">
-    <button class="btn btn-danger btn-block rounded-0" (click)="messageService.clear()">Clear</button>
+    <button class="btn btn-sm btn-danger btn-block rounded-0" (click)="messageService.clear()">Clear</button>
     <div *ngFor="let message of messageService.messages">
       <ngb-alert type="danger" (close)="closeAlert(message)">{{ message }}</ngb-alert>
     </div>

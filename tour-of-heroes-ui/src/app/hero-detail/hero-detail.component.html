@@ -4,15 +4,13 @@
       <h3>{{hero.name | uppercase}} Details</h3>
     </div>
   </div>
-  <div class="card">
-    <div class="card-body">
-      <div class="form-inline">
-        <input class="form-control" value="{{hero.id}}" readonly>
-        <input class="form-control" [(ngModel)]="hero.name" placeholder="name">
-      </div>
-      <br>
-      <button (click)="goBack()" class="btn btn-danger">go back</button>
-      <button (click)="save()" class="btn btn-success">save</button>
+  <div class="content-div">
+    <div class="form-inline">
+      <input class="form-control" value="{{hero.id}}" readonly size="1">
+      <input class="form-control" [(ngModel)]="hero.name" placeholder="name">
     </div>
+    <br>
+    <button (click)="goBack()" class="btn btn-sm btn btn-danger">go back</button>
+    <button (click)="save()" class="btn btn-sm btn btn-success">save</button>
   </div>
 </div>

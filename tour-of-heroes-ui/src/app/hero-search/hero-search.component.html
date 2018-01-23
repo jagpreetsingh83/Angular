@@ -1,8 +1,10 @@
-<form class="form-inline">
-  <div class="input-group">
-    <input #searchBox class="form-control" placeholder="Search Hero" (keyup)="search(searchBox.value)">
+<div id="search-div">
+  <form class="form-inline">
+    <div class="input-group">
+      <input #searchBox class="form-control" placeholder="Search Hero" (keyup)="search(searchBox.value)">
+    </div>
+  </form>
+  <div class="list-group" id="search-result">
+    <a *ngFor="let hero of heroes$ | async" (click)="editHero(hero.id)" class="list-group-item list-group-item-action">{{hero.name}}</a>
   </div>
-</form>
-<div class="list-group" id="search-result">
-  <a *ngFor="let hero of heroes$ | async" (click)="editHero(hero.id)" class="list-group-item list-group-item-action">{{hero.name}}</a>
 </div>

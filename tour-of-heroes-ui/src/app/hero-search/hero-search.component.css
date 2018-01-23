@@ -1,4 +1,9 @@
+#search-div {
+  position: relative;
+}
+
 #search-result {
   position: absolute;
   z-index: 1;
+  width: 100%;
 }

@@ -5,7 +5,7 @@
 </div>
 <ngb-carousel class="bg-dark text-center">
   <ng-template ngbSlide *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}" class="btn btn-success btn-block rounded-0">
+    <a routerLink="/detail/{{hero.id}}" class="btn btn-sm btn btn-success btn btn-block rounded-0">
       <h4>{{hero.id}}. {{hero.name}}</h4>
     </a>
   </ng-template>
