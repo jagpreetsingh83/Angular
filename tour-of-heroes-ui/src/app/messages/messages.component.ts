@@ -7,6 +7,8 @@ export class MessagesComponent implements OnInit {
 
   constructor(public messageService : MessageService) {}
 
+  isCollapsed = false;
+
   ngOnInit() {}
 
   closeAlert(message : string) {
