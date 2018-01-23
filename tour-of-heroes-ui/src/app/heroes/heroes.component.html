@@ -3,14 +3,11 @@
     <h3>My Heroes</h3>
   </div>
 </div>
-<div class="card">
-  <div class="card-body">
-    <form class="form-inline">
-      <label for="heroName">Hero name:</label>
-      <input class="form-control" id="heroName" #heroName>
-      <button class="btn btn-sm btn-success" (click)="add(heroName.value); heroName.value=''">Add</button>
-    </form>
-  </div>
+<div class="content-div">
+  <form class="form-inline">
+    <input class="form-control" #heroName placeholder="Hero Name...">
+    <button class="btn btn-sm btn-success" (click)="add(heroName.value); heroName.value=''">Add</button>
+  </form>
 </div>
 <div class="list-group">
   <a *ngFor="let hero of heroes" routerLink="/detail/{{hero.id}}" class="list-group-item list-group-item-action">

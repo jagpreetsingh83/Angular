@@ -1,0 +1,17 @@
+.content-div {
+  padding: 20px;
+}
+
+input {
+  margin: 2px;
+}
+
+:host>>>.list-group-item {
+  padding: 2px;
+  border: 0;
+}
+
+:host>>>.list-group {
+  margin-left: 20px;
+  margin-right: 20px;
+}
