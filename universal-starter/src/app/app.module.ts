@@ -1,24 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import {AppComponent} from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-  ],
-  imports: [
-    BrowserModule.withServerTransition({appId: 'my-app'}),
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full'},
-      { path: 'lazy', loadChildren: './lazy/lazy.module#LazyModule'},
-      { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'}
-    ])
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule.withServerTransition({appId: 'my-app'})],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
