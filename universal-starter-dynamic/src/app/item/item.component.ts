@@ -1,17 +1,38 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnDestroy, Input} from '@angular/core';
 import {DummyService} from '../dummy.service';
 import {Observable} from 'rxjs/Observable';
+import {Subscription} from 'rxjs/Subscription';
+import {Item} from '../item';
 
 @Component({selector: 'app-item', templateUrl: './item.component.html', styleUrls: ['./item.component.css']})
-export class ItemComponent implements OnInit {
+export class ItemComponent implements OnDestroy {
 
-  price$ : Observable < string >;
+  price : string;
+  priceSubscription : Subscription;
+  loading : boolean = false;
 
-  constructor(private dummyService : DummyService) {}
+  @Input()phone : Item;
 
-  ngOnInit() {
-    this.price$ = this
+  constructor(private dummyService : DummyService) {
+    this.initPriceSubscription();
+  }
+
+  initPriceSubscription() {
+    this.loading = true;
+    this.priceSubscription = this
       .dummyService
-      .getPrice();
+      .getPrice()
+      .subscribe(p => {
+        this.price = p;
+        this.loading = false;
+      })
+  }
+
+  ngOnDestroy() {
+    if (this.priceSubscription) {
+      this
+        .priceSubscription
+        .unsubscribe();
+    }
   }
 }
