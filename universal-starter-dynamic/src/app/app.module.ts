@@ -2,11 +2,16 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
+import {ContainerComponent} from './container/container.component';
+import {ItemComponent} from './item/item.component';
+import {DummyService} from './dummy.service';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent, ContainerComponent, ItemComponent
+  ],
   imports: [BrowserModule.withServerTransition({appId: 'my-app'})],
-  providers: [],
+  providers: [DummyService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
