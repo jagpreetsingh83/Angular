@@ -6,6 +6,7 @@ import {ContainerComponent} from './container/container.component';
 import {ItemComponent} from './item/item.component';
 import {DummyService} from './dummy.service';
 import {LoadingModule} from 'ngx-loading';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {LoadingModule} from 'ngx-loading';
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
-    LoadingModule
+    LoadingModule,
+    NgbModule.forRoot()
   ],
   providers: [DummyService],
   bootstrap: [AppComponent]
