@@ -1,9 +1,17 @@
-import {Component, OnInit, OnDestroy, Input} from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  Input,
+  Inject,
+  Injector,
+  PLATFORM_ID
+} from '@angular/core';
 import {DummyService} from '../dummy.service';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 import {Item} from '../item';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({selector: 'app-item', templateUrl: './item.component.html', styleUrls: ['./item.component.css']})
 export class ItemComponent implements OnDestroy {
@@ -15,8 +23,16 @@ export class ItemComponent implements OnDestroy {
 
   @Input()phone : Item;
 
-  constructor(private dummyService : DummyService, private modalService : NgbModal) {
+  private modalService : NgbModal;
+
+  constructor(private dummyService : DummyService, @Inject(PLATFORM_ID)private platformId : Object, private injector : Injector) {
     this.initPriceSubscription();
+    // Hack to save from > Error: No component factory found for NgbModalBackdrop
+    if (isPlatformBrowser(this.platformId)) {
+      this.modalService = this
+        .injector
+        .get(NgbModal);
+    }
   }
 
   open(content) {
@@ -24,6 +40,7 @@ export class ItemComponent implements OnDestroy {
       .modalService
       .open(content, {windowClass: 'dark-modal'});
   }
+
   initPriceSubscription() {
     this.loading = true;
     this.priceSubscription = this
