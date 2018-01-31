@@ -7,6 +7,7 @@ import {ItemComponent} from './item/item.component';
 import {DummyService} from './dummy.service';
 import {LoadingModule} from 'ngx-loading';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
     LoadingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    HttpClientModule
   ],
   providers: [DummyService],
   bootstrap: [AppComponent]
