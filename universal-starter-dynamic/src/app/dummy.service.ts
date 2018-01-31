@@ -16,6 +16,7 @@ export class DummyService {
 
         constructor(private http : HttpClient) {}
 
+        /*
         items : Object[] = [
                 new Item(1, 'IPhone X', 'https://www.rogers.com/web/totes/cms/ute/rogers/consumer/BFA/images/wireless/dev' +
                                 'ices/apple/UTE-iPhoneX-silver-225x338-01.png'),
@@ -34,15 +35,16 @@ export class DummyService {
                 new Item(8, 'Huawei P10', 'https://www.rogers.com/web/totes/cms/ute/rogers/consumer/BFA/images/wireless/dev' +
                                 'ices/huawei/UTE-huawei-p10-blk-800x1200-01-EN-P10BLK-.png')
         ];
+        */
 
         getPrice() : Observable < string > {
                 // return Observable.of((Math.random() * 1000).toFixed(2)).delay(this.delay);
-                return this.http.get < string > ('http://localhost:3000/api/price');
+                return this.http.get < string > ('http://localhost:4000/api/price');
         }
 
         getItems() : Observable < Object[] > {
                 // return Observable.of(this.items).delay(this.delay);
-                return this.http.get < Object[] > ('http://localhost:3000/api/phones');
+                return this.http.get < Object[] > ('http://localhost:4000/api/phones');
         }
 
 }
