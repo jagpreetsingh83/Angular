@@ -14,7 +14,15 @@ export class DummyService {
         constructor(private http : HttpClient) {}
 
         agent() : Observable < Object > {
-                return this.http.post < Object > ('/v1/session/agent', {acctNbr: "771025335"}).pipe(tap((result) => console.log('result-->', result)), catchError(this.handleError('error', [])));;
+                return this.http.post < Object > ('/v1/session/agent', {"acctNbr": "771025335"}).pipe(tap((result) => console.log('result-->', result)), catchError(this.handleError('error', [])));;
+        }
+
+        customer() : Observable < Object > {
+                return this.http.post < Object > ('/v1/accounts/overview', {
+                        "applicationId": "Rogers.com",
+                        "refresh": false,
+                        "acctNbr": 771025335
+                }).pipe(tap((result) => console.log('result-->', result)), catchError(this.handleError('error', [])));;
         }
 
         /*

@@ -8,10 +8,11 @@ import {LoadingModule} from 'ngx-loading';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
+import { ClientComponent } from './client/client.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ContainerComponent, HeaderComponent
+    AppComponent, ContainerComponent, HeaderComponent, ClientComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
