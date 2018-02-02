@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-sm navbar-dark" *ngIf="agent">
+  <a class="navbar-brand" routerLink="/">
+    <img src="/assets/images/logo-inverted.png" alt="Rogers">
+  </a>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <span class="nav-link" style="color:white;">Welcome, {{agent.lanId}}</span>
+    </li>
+    <li class="nav-item">
+      <span class="nav-link">|</span>
+    </li>
+    <li class="nav-item">
+      <span class="nav-link" style="color:white;">{{agent.dealerCode}}</span>
+    </li>
+    <li class="nav-item">
+      <span class="nav-link" style="width:50px;"></span>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Sign out
+        <i class="fas fa-sign-out-alt"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Français
+        <i class="fas fa-globe"></i>
+      </a>
+    </li>
+  </ul>
+</nav>
+<ngx-loading [show]="loading"></ngx-loading>

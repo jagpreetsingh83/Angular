@@ -3,15 +3,15 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {ContainerComponent} from './container/container.component';
-import {ItemComponent} from './item/item.component';
 import {DummyService} from './dummy.service';
 import {LoadingModule} from 'ngx-loading';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ContainerComponent, ItemComponent
+    AppComponent, ContainerComponent, HeaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
