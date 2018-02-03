@@ -1,0 +1,51 @@
+#footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+:host>>>.container-fluid {
+    padding: 5px;
+    margin: 0;
+}
+
+#timer {
+    background-color: #e9eaea;
+    color: black;
+}
+
+#toolbar {
+    background-color: #00aec7;
+    padding: 0;
+}
+
+#toolbar a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#expand {
+    width: 60px;
+    height: 26px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    cursor: pointer;
+    display: inline-block;
+}
+
+#nova {
+    width: 120px;
+    display: inline-block;
+}
+
+#report-issue {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#navigation {
+    height: 100px;
+    background-color: #bbe4ec;
+}

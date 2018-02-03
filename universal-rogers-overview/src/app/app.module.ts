@@ -14,10 +14,11 @@ import { SubmenuComponent } from './submenu/submenu.component';
 import { BillComponent } from './bill/bill.component';
 import { InteractionComponent } from './interaction/interaction.component';
 import { ServicesComponent } from './services/services.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ContainerComponent, HeaderComponent, ClientComponent, DealerCodeComponent, SubmenuComponent, BillComponent, InteractionComponent, ServicesComponent
+    AppComponent, ContainerComponent, HeaderComponent, ClientComponent, DealerCodeComponent, SubmenuComponent, BillComponent, InteractionComponent, ServicesComponent, FooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
