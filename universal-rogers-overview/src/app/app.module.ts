@@ -15,10 +15,12 @@ import { BillComponent } from './bill/bill.component';
 import { InteractionComponent } from './interaction/interaction.component';
 import { ServicesComponent } from './services/services.component';
 import { FooterComponent } from './footer/footer.component';
+import { AssetBannerComponent } from './asset-banner/asset-banner.component';
+import { NoticeComponent } from './notice/notice.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ContainerComponent, HeaderComponent, ClientComponent, DealerCodeComponent, SubmenuComponent, BillComponent, InteractionComponent, ServicesComponent, FooterComponent
+    AppComponent, ContainerComponent, HeaderComponent, ClientComponent, DealerCodeComponent, SubmenuComponent, BillComponent, InteractionComponent, ServicesComponent, FooterComponent, AssetBannerComponent, NoticeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),

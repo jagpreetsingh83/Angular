@@ -1,0 +1,8 @@
+h3 {
+    color: #da291c;
+}
+
+:host>>>.card {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
