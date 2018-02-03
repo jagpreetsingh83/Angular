@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h3>Add More Services</h3>
+  </div>
+  <div class="col-sm-4" *ngFor="let service of services">
+    <div class="card bg-light text-dark">
+      <div class="card-body">{{service.name}}</div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,6 @@
 <div class="card">
-  <div class="card-body">{{client | json}}</div>
+  <div class="card-body">
+    <pre>{{client | json}}</pre>
+  </div>
 </div>
 <ngx-loading [show]="loading"></ngx-loading>

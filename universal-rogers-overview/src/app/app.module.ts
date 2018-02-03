@@ -9,10 +9,15 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { ClientComponent } from './client/client.component';
+import { DealerCodeComponent } from './dealer-code/dealer-code.component';
+import { SubmenuComponent } from './submenu/submenu.component';
+import { BillComponent } from './bill/bill.component';
+import { InteractionComponent } from './interaction/interaction.component';
+import { ServicesComponent } from './services/services.component';
 
 @NgModule({
   declarations: [
-    AppComponent, ContainerComponent, HeaderComponent, ClientComponent
+    AppComponent, ContainerComponent, HeaderComponent, ClientComponent, DealerCodeComponent, SubmenuComponent, BillComponent, InteractionComponent, ServicesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
