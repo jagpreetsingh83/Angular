@@ -1,10 +1,11 @@
 :host>>>.card {
     border: none;
-    border-radius: 0;
+    border-radius: 0;    
 }
 
 .plus {
     color: #DA291C;
     position: absolute;
     top: -26px;
+    left: 10px;
 }
