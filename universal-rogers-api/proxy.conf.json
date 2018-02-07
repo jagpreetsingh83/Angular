@@ -1,6 +1,6 @@
 {
     "/v1/*": {
-        "target": "https://dev01-oneview.rogers.com",
+        "target": "https://qa01-oneview.rogers.com",
         "secure": false,
         "logLevel": "debug",
         "changeOrigin": true

@@ -28,10 +28,7 @@ export class DummyService {
         bill() : Observable < Object > {
                 return this.http.post < Object > ('/v1/accounts/billing/info', {
                         "applicationId": "Rogers.com",
-                        "refresh": false,
-                        "accountNumber": 771025335,
-                        "accountTypeNumber": 1,
-                        "language": "en"
+                        "accountNumber": "792728743"
                 }).pipe(tap((result) => console.log('result-->', result)), catchError(this.handleError('error', [])));;
         }
 
