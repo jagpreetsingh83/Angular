@@ -3,10 +3,10 @@ import {Subscription} from 'rxjs/Subscription';
 import {DummyService} from '../dummy.service';
 import {TransferState, makeStateKey} from '@angular/platform-browser';
 
-const DATA_KEY = makeStateKey < Object[] > ('billing');
+const DATA_KEY = makeStateKey < Object[] > ('overview');
 
-@Component({selector: 'app-billing', templateUrl: './billing.component.html', styleUrls: ['./billing.component.css']})
-export class BillingComponent implements OnDestroy {
+@Component({selector: 'app-account-overview', templateUrl: './account-overview.component.html', styleUrls: ['./account-overview.component.css']})
+export class AccountOverviewComponent implements OnDestroy {
 
   data : Object;
   dataSubscription : Subscription;
@@ -24,7 +24,7 @@ export class BillingComponent implements OnDestroy {
       this.loading = true;
       this.dataSubscription = this
         .dummyService
-        .bill()
+        .overview()
         .subscribe(data => {
           this.data = data;
           this

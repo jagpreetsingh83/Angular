@@ -6,10 +6,13 @@ import {DummyService} from './dummy.service';
 import {LoadingModule} from 'ngx-loading';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
-import { BillingComponent } from './billing/billing.component';
+import {BillingComponent} from './billing/billing.component';
+import {AccountOverviewComponent} from './account-overview/account-overview.component';
 
 @NgModule({
-  declarations: [AppComponent, BillingComponent],
+  declarations: [
+    AppComponent, BillingComponent, AccountOverviewComponent
+  ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
     LoadingModule,

@@ -40,6 +40,14 @@ export class DummyService {
                 }).pipe(tap((result) => console.log('result-->', result)), catchError(this.handleError('error', [])));;
         }
 
+        overview() : Observable < Object > {
+                return this.http.post < Object > ('/v1/accounts/overview', {
+                        "applicationId": "Rogers.com",
+                        "refresh": false,
+                        "acctNbr": "792728743"
+                }).pipe(tap((result) => console.log('result-->', result)), catchError(this.handleError('error', [])));;
+        }
+
         /*
          * Handle Http operation that failed.
          * Let the app continue.
