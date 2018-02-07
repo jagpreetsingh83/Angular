@@ -1,18 +1,24 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component, OnInit, OnDestroy, Input} from '@angular/core';
 import {Subscription} from 'rxjs/Subscription';
 import {DummyService} from '../dummy.service';
 import {TransferState, makeStateKey} from '@angular/platform-browser';
+import {Apimeta} from '../apimeta';
 
-const DATA_KEY = makeStateKey < Object[] > ('overview');
+const DATA_KEY = makeStateKey < Object[] > ('data');
 
-@Component({selector: 'app-account-overview', templateUrl: './account-overview.component.html', styleUrls: ['./account-overview.component.css']})
-export class AccountOverviewComponent implements OnDestroy {
+@Component({selector: 'app-panel', templateUrl: './panel.component.html', styleUrls: ['./panel.component.css']})
+export class PanelComponent implements OnInit,
+OnDestroy {
+
+  @Input()apiDetail : Apimeta;
 
   data : Object;
   dataSubscription : Subscription;
   loading : boolean = false;
 
-  constructor(private dummyService : DummyService, private state : TransferState) {
+  constructor(private dummyService : DummyService, private state : TransferState) {}
+
+  ngOnInit() {
     this.initDataSubscription();
   }
 
@@ -24,7 +30,7 @@ export class AccountOverviewComponent implements OnDestroy {
       this.loading = true;
       this.dataSubscription = this
         .dummyService
-        .overview()
+        .fetchData(this.apiDetail.endpoint, this.apiDetail.payload)
         .subscribe(data => {
           this.data = data;
           this

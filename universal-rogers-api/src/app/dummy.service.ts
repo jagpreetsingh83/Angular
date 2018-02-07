@@ -13,39 +13,8 @@ export class DummyService {
 
         constructor(private http : HttpClient) {}
 
-        agent() : Observable < Object > {
-                return this.http.post < Object > ('/v1/session/agent', {"acctNbr": "771025335"}).pipe(tap((result) => console.log('result-->', result)), catchError(this.handleError('error', [])));;
-        }
-
-        customer() : Observable < Object > {
-                return this.http.post < Object > ('/v1/accounts/overview', {
-                        "applicationId": "Rogers.com",
-                        "refresh": false,
-                        "acctNbr": 771025335
-                }).pipe(tap((result) => console.log('result-->', result)), catchError(this.handleError('error', [])));;
-        }
-
-        bill() : Observable < Object > {
-                return this.http.post < Object > ('/v1/accounts/billing/info', {
-                        "applicationId": "Rogers.com",
-                        "accountNumber": "792728743"
-                }).pipe(tap((result) => console.log('result-->', result)), catchError(this.handleError('error', [])));;
-        }
-
-        interactions() : Observable < Object > {
-                return this.http.post < Object > ('/v1/accounts/interactions/details', {
-                        "lang": "EN",
-                        "ban": "771025335",
-                        "accountNumber": "771025335"
-                }).pipe(tap((result) => console.log('result-->', result)), catchError(this.handleError('error', [])));;
-        }
-
-        overview() : Observable < Object > {
-                return this.http.post < Object > ('/v1/accounts/overview', {
-                        "applicationId": "Rogers.com",
-                        "refresh": false,
-                        "acctNbr": "792728743"
-                }).pipe(tap((result) => console.log('result-->', result)), catchError(this.handleError('error', [])));;
+        fetchData(endpoint, payload) : Observable < Object > {
+                return this.http.post < Object > (endpoint, payload).pipe(tap((result) => console.log('result-->', result)), catchError(this.handleError('error', [])));;
         }
 
         /*
