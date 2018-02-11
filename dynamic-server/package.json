@@ -9,8 +9,9 @@
   "author": "Jagpreet Singh",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "~1.0.1",
+    "cookie-parser": "^1.4.3",
     "express": "~4.0.0",
-    "mongoose": "~3.6.13",
-    "body-parser": "~1.0.1"
+    "mongoose": "~3.6.13"
   }
 }

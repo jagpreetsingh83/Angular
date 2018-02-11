@@ -1,20 +1,22 @@
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
-import {Item} from './item';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { Item } from './item';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+/*
 const httpOptions = {
-        headers: new HttpHeaders({'Content-Type': 'application/json'})
+        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
+*/
 
 @Injectable()
 export class DummyService {
 
-        delay : number = 1000;
+        delay: number = 1000;
 
-        constructor(private http : HttpClient) {}
+        constructor(private http: HttpClient) { }
 
         /*
         items : Object[] = [
@@ -37,14 +39,14 @@ export class DummyService {
         ];
         */
 
-        getPrice() : Observable < string > {
+        getPrice(): Observable<string> {
                 // return Observable.of((Math.random() * 1000).toFixed(2)).delay(this.delay);
-                return this.http.get < string > ('http://localhost:5000/api/price');
+                return this.http.get<string>('/api/price');
         }
 
-        getItems() : Observable < Object[] > {
+        getItems(): Observable<Object[]> {
                 // return Observable.of(this.items).delay(this.delay);
-                return this.http.get < Object[] > ('http://localhost:5000/api/phones');
+                return this.http.get<Object[]>('/api/phones');
         }
 
 }
