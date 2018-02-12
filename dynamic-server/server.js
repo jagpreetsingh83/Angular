@@ -32,9 +32,9 @@ router.get('/price', function (req, res) {
     }, 1000);
 });
 router.get('/phones', function (req, res) {
-    // if (!req.cookies.PLAY) {
-    //     throw Error('PLAY Cookie Not Found');
-    // }
+    if (!req.cookies.PLAY) {
+        throw Error('PLAY Cookie Not Found');
+    }
     setTimeout(function () {
         res.json([
             {
