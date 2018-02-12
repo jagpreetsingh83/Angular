@@ -33,12 +33,12 @@ export class DummyService {
 
         getPrice(): Observable<string> {
                 // return Observable.of((Math.random() * 1000).toFixed(2)).delay(this.delay);
-                return this.http.get<string>('http://localhost:5000/api/price');
+                return this.http.get<string>('/api/price');
         }
 
         getItems(): Observable<Object[]> {
                 // return Observable.of(this.items).delay(this.delay);
-                return this.http.get<Object[]>('http://localhost:5000/api/phones');
+                return this.http.get<Object[]>('/api/phones');
         }
 
 }
