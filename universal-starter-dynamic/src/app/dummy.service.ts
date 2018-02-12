@@ -1,37 +1,14 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/delay';
 import { Item } from './item';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injector } from '@angular/core';
-import { REQUEST } from '@nguniversal/express-engine/tokens';
-import { isPlatformBrowser } from '@angular/common';
-
-import * as xhr2 from 'xhr2';
-xhr2.prototype._restrictedHeaders = {};
-
-/*
-const httpOptions = {
-        headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-*/
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class DummyService {
 
         delay: number = 1000;
 
-        cookies: string;
-
-        constructor(private http: HttpClient, private injector: Injector, @Inject(PLATFORM_ID)
-        private platformId: string) {
-                if (!isPlatformBrowser(this.platformId)) {
-                        this.cookies = this
-                                .injector
-                                .get(REQUEST).headers.cookie;
-                }
-        }
+        constructor(private http: HttpClient) { }
 
         /*
         items : Object[] = [
@@ -56,26 +33,12 @@ export class DummyService {
 
         getPrice(): Observable<string> {
                 // return Observable.of((Math.random() * 1000).toFixed(2)).delay(this.delay);
-                console.log('=======  COMPLETE HEADER ========');
-                const cookieStr = this.cookies;
-                console.log(cookieStr);
-                return this.http.get<string>('http://localhost:5000/api/price', {
-                        headers: {
-                                Cookie: cookieStr
-                        }
-                });
+                return this.http.get<string>('http://localhost:5000/api/price');
         }
 
         getItems(): Observable<Object[]> {
                 // return Observable.of(this.items).delay(this.delay);
-                console.log('=======  COMPLETE HEADER ========');
-                const cookieStr = this.cookies;
-                console.log(cookieStr);
-                return this.http.get<Object[]>('http://localhost:5000/api/phones', {
-                        headers: {
-                                Cookie: cookieStr
-                        }
-                });
+                return this.http.get<Object[]>('http://localhost:5000/api/phones');
         }
 
 }
