@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
@@ -6,6 +6,8 @@ import { Item } from './item';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injector } from '@angular/core';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
+import { isPlatformBrowser } from '@angular/common';
+
 import * as xhr2 from 'xhr2';
 xhr2.prototype._restrictedHeaders = {};
 
@@ -22,10 +24,13 @@ export class DummyService {
 
         cookies: string;
 
-        constructor(private http: HttpClient, private injector: Injector) {
-                this.cookies = this
-                        .injector
-                        .get(REQUEST).headers.cookie;
+        constructor(private http: HttpClient, private injector: Injector, @Inject(PLATFORM_ID)
+        private platformId: string) {
+                if (!isPlatformBrowser(this.platformId)) {
+                        this.cookies = this
+                                .injector
+                                .get(REQUEST).headers.cookie;
+                }
         }
 
         /*
